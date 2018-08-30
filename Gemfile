@@ -2,9 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'hanami',       '~> 1.2'
-gem 'hanami-model', '~> 1.2'
-
-gem 'sqlite3'
+gem 'puma'
+gem 'sidekiq'
 
 group :development do
   # Code reloading
@@ -20,8 +19,4 @@ end
 group :test do
   gem 'rspec'
   gem 'capybara'
-end
-
-group :production do
-  # gem 'puma'
 end

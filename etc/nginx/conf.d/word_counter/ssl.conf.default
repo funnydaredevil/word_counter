@@ -1,0 +1,5 @@
+listen 443 ssl http2;
+
+ssl_certificate     /var/www/ssl/word_counter.crt;
+ssl_certificate_key /var/www/ssl/word_counter.key;
+ssl_dhparam         /var/www/ssl/dhparam.pem;

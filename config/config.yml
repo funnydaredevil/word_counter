@@ -1,0 +1,18 @@
+defaults: &defaults
+  <<: *site_configs
+  app_name: "<%= ENV['app_name'] %>"
+  domain: "<%= ENV['domain'] %>"
+  https: <%= ENV['https'] || 'true' %>
+  admin_emails: <%= ENV['admin_emails'] || 'admin@admin.com' %>
+  rack_attack:
+    limit: <%= ENV['rack_attack.limit'] %>
+    period: <%= ENV['rack_attack.period'] %>
+  <% end %>
+  upload_provider: "<%= ENV['upload_provider'] %>"
+  upload_access_id: "<%= ENV['upload_access_id'] %>"
+  upload_access_secret: "<%= ENV['upload_access_secret'] %>"
+  upload_bucket: "<%= ENV['upload_bucket'] %>"
+  upload_url: "<%= ENV['upload_url'] %>"
+
+production:
+  <<: *defaults
