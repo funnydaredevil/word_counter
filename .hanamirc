@@ -1,0 +1,3 @@
+project=word_counter
+test=rspec
+template=erb
