@@ -9,7 +9,7 @@ install:
 	@make secret
 	@touch app.local.env
 	@$(RUN) bundle install --retry=3 --jobs=2
-	@make reindex
+	# @make reindex
 install_ssl:
 	rm -f etc/nginx/conf.d/word_counter/ssl.conf
 	docker-compose start web
@@ -27,7 +27,7 @@ update:
 	@make restart
 	@make clean
 restart:
-	@sh ./scripts/restart-app
+	# @sh ./scripts/restart-app
 	@docker-compose stop web
 	@docker-compose up -d web
 start:

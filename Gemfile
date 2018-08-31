@@ -4,6 +4,7 @@ gem 'rake'
 gem 'hanami',       '~> 1.2'
 gem 'puma'
 gem 'sidekiq'
+gem 'elasticsearch'
 
 group :development do
   # Code reloading
