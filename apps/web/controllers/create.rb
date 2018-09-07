@@ -9,7 +9,7 @@ module Web::Controllers::Counters
     end
 
     def call(params)
-      if params.valid? && process_text_input.success?
+      if params.valid? && params_present? && process_text_input.success?
         self.status = 201
       else
         self.status = 422
@@ -17,6 +17,10 @@ module Web::Controllers::Counters
     end
 
     private
+
+    def params_present?
+      params[:text] || params[:server_file] || params[:url]
+    end
 
     def process_text_input
       @process_text_input ||= ::ProcessTextInput.new(service_worker: service_worker)

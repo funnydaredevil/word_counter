@@ -41,6 +41,8 @@ console:
 	@$(RUN) bundle exec hanami console
 routes:
 	@$(RUN) bundle exec hanami routes
+rspec:
+	@$(RUN) bundle exec rspec
 secret:
 	@test -f app.secret.env || echo "secret_key_base=`openssl rand -hex 32`" > app.secret.env
 	@cat app.secret.env

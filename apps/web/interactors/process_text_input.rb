@@ -1,5 +1,4 @@
 require 'hanami/interactor'
-# require './lib/word_counter/workers/process_text_service_worker'
 
 class ProcessTextInput
   include Hanami::Interactor
