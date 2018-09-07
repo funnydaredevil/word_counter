@@ -20,7 +20,9 @@ module Web
       #
       load_paths << [
         'controllers',
-        'views'
+        'views',
+        'interactors',
+        './../../lib/word_counter/workers'
       ]
 
       # Handle exceptions with HTTP statuses (true) or don't catch them (false).
@@ -95,7 +97,7 @@ module Web
       # Default format for responses that don't consider the request format
       # Argument: A symbol representation of a mime type, defaults to :html
       #
-      # default_response_format :html
+      default_response_format :json
 
       # HTTP Body parsers
       # Parse non GET responses body for a specific mime type

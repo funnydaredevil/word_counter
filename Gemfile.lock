@@ -3,6 +3,7 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    awesome_print (1.8.0)
     better_errors (2.5.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -49,17 +50,7 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.11.0)
-    elasticsearch (6.1.0)
-      elasticsearch-api (= 6.1.0)
-      elasticsearch-transport (= 6.1.0)
-    elasticsearch-api (6.1.0)
-      multi_json
-    elasticsearch-transport (6.1.0)
-      faraday
-      multi_json
     erubi (1.7.1)
-    faraday (0.15.2)
-      multipart-post (>= 1.2, < 3)
     hanami (1.2.0)
       bundler
       concurrent-ruby (~> 1.0)
@@ -112,8 +103,6 @@ GEM
       mini_mime (>= 0.1.1)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
-    multi_json (1.13.1)
-    multipart-post (2.0.0)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     public_suffix (3.0.3)
@@ -155,13 +144,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   capybara
   dotenv (~> 2.0)
-  elasticsearch
   hanami (~> 1.2)
+  hanami-view
   hanami-webconsole
   puma
   rake
+  redis
   rspec
   shotgun
   sidekiq

@@ -3,6 +3,7 @@ require 'hanami/setup'
 require_relative '../lib/word_counter'
 require_relative '../apps/web/application'
 require_relative './sidekiq'
+require_relative './redis'
 
 Hanami.configure do
   mount Web::Application, at: '/'

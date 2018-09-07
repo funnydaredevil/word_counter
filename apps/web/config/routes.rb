@@ -2,4 +2,5 @@
 # See: http://hanamirb.org/guides/routing/overview/
 #
 # Example:
-get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
+
+resources :counters, only: [:create, :index]

@@ -8,15 +8,12 @@ workers (ENV["workers"] || 4)
 threads (ENV["min_threads"] || 8), (ENV["max_threads"] || 8)
 preload_app!
 
-puts "======================================="
-puts ENV.select {|k,v| v.empty? }
-puts "======================================="
-
 # on_worker_boot do
 #   ActiveSupport.on_load(:active_record) do
 #     ActiveRecord::Base.establish_connection
 #   end
 # end
+
 
 # before_fork do
 #   ActiveRecord::Base.connection_pool.disconnect!
