@@ -9,7 +9,6 @@ install:
 	@make secret
 	@touch app.local.env
 	@$(RUN) bundle install --retry=3 --jobs=2
-	# @make reindex
 install_ssl:
 	rm -f etc/nginx/conf.d/word_counter/ssl.conf
 	docker-compose start web
@@ -42,9 +41,6 @@ console:
 	@$(RUN) bundle exec hanami console
 routes:
 	@$(RUN) bundle exec hanami routes
-reindex:
-	@echo "Reindex ElasticSearch..."
-	@$(RAKE) environment elasticsearch:import:model CLASS=InputString FORCE=y
 secret:
 	@test -f app.secret.env || echo "secret_key_base=`openssl rand -hex 32`" > app.secret.env
 	@cat app.secret.env
